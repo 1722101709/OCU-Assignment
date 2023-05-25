@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About Page</title>
+	<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+	<div>
+		<div class="intro">
+			<h1 class="heading">About Page</h1>
+			<div class="nav">
+				<div class="img">
+					<img src="Images/About.jpeg" alt="About Image">
+				</div>
+				<ul class="menu">
+					<li>
+						<a href="HomePage.html">Home Page</a>
+					</li>
+					<li class="currentPage">
+						<a href="AboutPage.html">About Page</a>
+					</li>
+					<li>
+						<a href="HobbyPage.html">Hobby Page</a>
+					</li>
+					<li>
+						<a href="HomeTownPage.html">Home Town Page</a>
+					</li>
+				</ul>
+		    </div>
+		</div>
+		<div class="block">
+			<h2 class="sub-heading">Introduction</h2>
+			<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, similique perferendis omnis laboriosam minus cupiditate recusandae officia molestiae tenetur optio magnam aliquid enim repellat numquam exercitationem delectus vero sit maxime.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, similique perferendis omnis laboriosam minus cupiditate recusandae officia molestiae tenetur optio magnam aliquid enim repellat numquam exercitationem delectus vero sit maxime.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, similique perferendis omnis laboriosam minus cupiditate recusandae officia molestiae tenetur optio magnam aliquid enim repellat numquam exercitationem delectus vero sit maxime</p>
+			
+			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita unde odit animi voluptate nulla officia harum vel consectetur, rerum repellat laborum blanditiis, aliquid soluta veritatis laudantium sint quidem autem culpa.</p>
+
+		</div>
+		<div class="block">
+			<h2 class="sub-heading">Educational Details</h2>
+			<ul class="edu-list">
+				<li>
+					<div>
+						<h3>Middle School</h3>
+						<h3>+</h3>
+					</div>
+				    <div class="close">
+				    	<span>Mountain View middle School</span>
+				    	<span>Percentage : 97%</span>
+				    </div>
+				</li>
+				<li>
+					<div>
+						<h3>High School</h3>
+						<h3>+</h3>
+					</div>
+				    <div class="close">
+				    	<span>Oakland High School</span>
+				        <span>Percentage : 85%</span>
+				    </div>
+				</li>
+				<li>
+					<div>
+						<h3>Under Graduation</h3>
+						<h3>+</h3>
+					</div>
+				    <div class="close">
+				    	<span>California Institute of Technology (Caltech)</span>
+				    	<span>Percentage : 73%</span>
+				    </div>
+				</li>
+
+			</ul>
+		</div>
+		<div class="block">
+			<h2 class="sub-heading">My Web Project - Toggle Button</h2>
+				<div class="container">
+					<input type="checkbox" id="input">
+					<label for="input">
+						<span class="wall"></span>
+						<span class="ball"></span>
+					</label>
+					<div class="images">
+						<img src="Images/image.jpeg" class="img1">
+						<img src="Images/CaptainJackSparrow.jpg" class="img2">
+					</div>
+					<span class="name">Leonardo DiCaprio</span>
+				</div>
+		</div>
+		<div class="block">
+			<h2 class="sub-heading">Interests</h2>
+			<img class="Interests-Image" src="Images/Chess.jpeg" alt="Playing Chess" width="200" height="200">
+			<img class="Interests-Image" src="Images/Exercise.jpeg" alt="Exercise" width="200" height="200">
+			<img class="Interests-Image" src="Images/Coding.jpeg" alt="Coding" width="200" height="200">
+			<img class="Interests-Image" src="Images/Listening-Songs.jpeg" alt="Listening Songs" width="200" height="200">
+			<img class="Interests-Image" src="Images/Watching Movies.jpeg" alt="Watching Movies" width="200" height="200">
+		</div>
+		<div class="block address">
+			<h2 class="sub-heading">Contact Info</h2>
+			<p>+1 123456789</p>
+			<p>
+				<a href="mailto:xyz@eagles.oc.in">xyz@eagles.oc.in</a>
+			</p>
+			<p>Oklahoma, OK, USA</p>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d415855.3662753655!2d-97.80886333374131!3d35.48275893121394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87ad8a547ef8d281%3A0x33a21274d14f3a9d!2sOklahoma%20City%2C%20OK%2C%20USA!5e0!3m2!1sen!2sin!4v1683575346440!5m2!1sen!2sin" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+	</div>
+</body>
+<script>
+	let eles = document.querySelector('.edu-list').children;
+	for(let index = 0; index < eles.length; index++){
+		let li = eles[index];
+		li.children[0].addEventListener('click', () => {
+			if(li.children[0].children[1].innerHTML == '+'){
+				li.children[0].nextElementSibling.style.display = 'flex';
+				li.children[0].nextElementSibling.style.flexDirection = 'column'
+				li.children[0].children[1].innerHTML = '-'
+			}
+			else{
+				li.children[0].nextElementSibling.style.display = 'none';
+				li.children[0].children[1].innerHTML = '+'
+			}
+			
+		})
+
+	}
+
+	let checkbox = document.getElementById('input');
+	checkbox.addEventListener('change',() => {
+		if(checkbox.checked){
+			document.querySelector('.name').innerHTML = "Captain Jack Sparrow";
+			document.querySelector('.name').style.color = "red";
+		}
+		else{
+			document.querySelector('.name').innerHTML = "Leonardo DiCaprio";
+			document.querySelector('.name').style.color = "green";
+		}
+	})
+</script>
+</html>
